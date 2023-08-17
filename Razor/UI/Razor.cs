@@ -8203,5 +8203,20 @@ namespace Assistant
 
             Config.SetProperty("CooldownWidth", width);
         }
+
+        private void scriptHotkey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void displayTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void generalTab_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
