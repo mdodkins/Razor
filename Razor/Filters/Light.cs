@@ -41,6 +41,7 @@ namespace Assistant.Filters
 
         public override void OnFilter(PacketReader p, PacketHandlerEventArgs args)
         {
+/*
             if (Client.Instance.AllowBit(FeatureBit.LightFilter))
             {
                 args.Block = true;
@@ -50,12 +51,14 @@ namespace Assistant.Filters
                     World.Player.GlobalLightLevel = 0;
                 }
             }
+ */
         }
 
         public override void OnEnable()
         {
             base.OnEnable();
 
+/*
             if (Client.Instance.AllowBit(FeatureBit.LightFilter) && World.Player != null)
             {
                 World.Player.LocalLightLevel = 0;
@@ -64,12 +67,13 @@ namespace Assistant.Filters
                 Client.Instance.SendToClient(new GlobalLightLevel(0));
                 Client.Instance.SendToClient(new PersonalLightLevel(World.Player));
             }
+ */
         }
 
         public override void OnDisable()
         {
             base.OnDisable();
-
+/*
             if (Client.Instance.AllowBit(FeatureBit.LightFilter) && World.Player != null)
             {
                 World.Player.LocalLightLevel = 6;
@@ -78,6 +82,7 @@ namespace Assistant.Filters
                 Client.Instance.SendToClient(new GlobalLightLevel(26));
                 Client.Instance.SendToClient(new PersonalLightLevel(World.Player));
             }
+ */
         }
     }
 }
