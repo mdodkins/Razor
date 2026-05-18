@@ -9,6 +9,9 @@ on:
       - 'help/**'
       - '**/build-site.yml'
 
+permissions:
+  contents: write          # release/tag create+delete (token is read-only by default)
+
 jobs:
 
   build:
@@ -68,10 +71,10 @@ jobs:
 
     - name: Delete Dev Release
       uses: dev-drprasad/delete-tag-and-release@v0.2.1
+      continue-on-error: true          # first run: no prior release/tag to delete
       with:
         delete_release: true
         tag_name: Razor-dev-preview
-        github_token: ${{ secrets.GITHUB_TOKEN }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
